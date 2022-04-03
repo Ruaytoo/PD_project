@@ -3,5 +3,5 @@
 class strategy
 {
 public:
-	std::vector<int> make_choice();
-}
+	int make_choice();
+};

@@ -5,6 +5,6 @@ class agent
 {
 public:
 	float score;
-	std::vector<int> choice;
+	std::vector<int> history;
 	strategy strategy;
-}
+};
