@@ -1,10 +1,16 @@
 #pragma once
 #include "strategy.h"
+#include <string>
 
-class agent
+
+class Agent
 {
 public:
+	void PrintStrategy();
+
+private:
+	int Agent_ID;
 	float score;
 	std::vector<int> history;
-	strategy strategy;
+	Strategy strategy;
 };

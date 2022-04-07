@@ -1,7 +1,20 @@
 #pragma once
+#include "agent.h"
+#include <string>
+#include <map>
 
-class strategy
+class Strategy
 {
 public:
-	int make_choice();
+	map<string, float> GetStrategy();
+	virtual bool MakeChoice() const {};
+	void SetStrategy(string& n, map<string, float>& p);
+
+private:
+	map<string, float> params;
+	string name;
 };
+
+class DefectStrategy : Strategy {
+	bool MakeChoice() {};
+}
