@@ -3,16 +3,13 @@
 #include <random>
 #include "agent.h"
 #include "strategy.h"
-#include "optimizer.h"
 
-template <typename T>
 
 class game
 {
 private:
 	std::vector<agent> agents;
-	std::vector<T> payoff;
-
+	payoff payoff;
 
 public:
 	game(int N, strategy strategy){};

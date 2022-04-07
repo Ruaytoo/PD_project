@@ -1,17 +1,15 @@
 #pragma once
 #include "agent.h"
-#include <vector>
 
 class payoff
 {
 private:
-	float left_high, right_high, left_low, right_low;
+	float dd, dc, cd, dd, p;
+	float p;
 
 public:
-	payoff(float left_high, float right_high,
-		float left_low, float right_low);
+	payoff(float dd, float dc,
+		float cd, float dd, p);
 
-	~payoff();
-
-	void compute_score(std::vector<agent>);
+	void compute_score(agent agent1, agent agent2);
 };
