@@ -4,8 +4,8 @@
 
 int main()
 {
-	strategy strategy;
-	game game(N, strategy);
-	game.round();
+	DefectStrategy strategy;
+	game game(N, strategy, 5, 3, 10, 0, 0.1);
+	//game.round();
 	return 0;
 }

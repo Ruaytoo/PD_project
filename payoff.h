@@ -4,12 +4,12 @@
 class payoff
 {
 private:
-	float dd, dc, cd, dd, p;
+	float dd, dc, cd, cc;
 	float p;
 
 public:
 	payoff(float dd, float dc,
-		float cd, float dd, p);
+		float cd, float cc, float p);
 
-	void compute_score(agent agent1, agent agent2);
+	void compute_score(Agent& agent1, Agent& agent2);
 };

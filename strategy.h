@@ -1,20 +1,19 @@
 #pragma once
-#include "agent.h"
 #include <string>
 #include <map>
 
 class Strategy
 {
 public:
-	map<string, float> GetStrategy();
-	virtual bool MakeChoice() const {};
-	void SetStrategy(string& n, map<string, float>& p);
+	std::map<std::string, float> GetStrategy();
+	bool MakeChoice();
+	void SetStrategy(std::string& n, std::map<std::string, float>& p);
 
 private:
-	map<string, float> params;
-	string name;
+	std::map<std::string, float> params;
+	std::string name;
 };
 
-class DefectStrategy : Strategy {
-	bool MakeChoice() {};
-}
+class DefectStrategy : public Strategy {
+	bool MakeChoice();
+};
