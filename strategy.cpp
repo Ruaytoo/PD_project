@@ -2,6 +2,10 @@
 #include <string>
 
 
+bool Strategy::MakeChoice() {
+	return 1;
+}
+
 std::map<std::string, float> Strategy::GetStrategy() {
 	return params;
 }

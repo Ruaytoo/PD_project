@@ -6,14 +6,14 @@
 #include "strategy.h"
 
 
-class game
+class Game
 {
 private:
-	std::vector<Agent> agents;
-	payoff payoff;
+	Payoff payoff;
 
 public:
-	game(int N, Strategy strategy,
+	std::vector<Agent> agents;
+	Game(int N, Strategy strategy,
 		float cc, float dc, float cd, float dd, float p);
 	void round();
 };

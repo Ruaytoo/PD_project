@@ -14,6 +14,6 @@ private:
 	std::string name;
 };
 
-class DefectStrategy : public Strategy {
+class DefectStrategy{
 	bool MakeChoice();
 };

@@ -1,26 +1,10 @@
-/*#include <vector>
-#include <string>
-#include "strategy.h"
-
-class agent
-{
-public:
-	float score;
-	std::vector<int> history;
-	Strategy strategy;
-	agent(Strategy strategy)
-	{
-		score = 0;
-		strategy = strategy;
-	}
-};*/
-
 #include "agent.h"
-#include <map>
-#include <iostream>
 
 Agent::Agent(Strategy strategy)
-:strategy(strategy) {}
+:strategy(strategy) 
+{
+
+}
 
 void Agent::PrintStrategy() {
 	std::map<std::string, float> strat = strategy.GetStrategy();

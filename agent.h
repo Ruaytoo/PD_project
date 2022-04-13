@@ -2,7 +2,9 @@
 #include "strategy.h"
 #include <string>
 #include <vector>
-
+#include "agent.h"
+#include <map>
+#include <iostream>
 
 class Agent
 {
@@ -12,10 +14,9 @@ public:
 	std::vector<int> history;
 	int choice;
 	Agent(Strategy strategy);
+	Strategy strategy;
 
 private:
-	int Agent_ID;
-	Strategy strategy;
-	
+	int Agent_ID;	
 };
 
