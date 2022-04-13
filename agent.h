@@ -6,6 +6,7 @@
 #include <map>
 #include <iostream>
 
+
 class Agent
 {
 public:
@@ -13,8 +14,8 @@ public:
 	float score;
 	std::vector<int> history;
 	int choice;
-	Agent(Strategy strategy);
-	Strategy strategy;
+	Agent(Strategy *strategy);
+	Strategy *strategy;
 
 private:
 	int Agent_ID;	

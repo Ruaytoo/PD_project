@@ -1,13 +1,13 @@
 #include "agent.h"
 
-Agent::Agent(Strategy strategy)
+Agent::Agent(Strategy* strategy)
 :strategy(strategy) 
 {
 
 }
 
 void Agent::PrintStrategy() {
-	std::map<std::string, float> strat = strategy.GetStrategy();
+	std::map<std::string, float> strat = strategy->GetStrategy();
 	std::cout << "Agent " << Agent_ID <<
                         " currently has the following strategy:" << std::endl;
 	int i = 1;

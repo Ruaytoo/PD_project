@@ -13,7 +13,7 @@ private:
 
 public:
 	std::vector<Agent> agents;
-	Game(int N, Strategy strategy,
+	Game(std::vector<Agent> agents,
 		float cc, float dc, float cd, float dd, float p);
 	void round();
 };
