@@ -5,7 +5,7 @@
 class Strategy
 {
 public:
-	virtual bool MakeChoice() = 0;
+	virtual bool MakeChoice(std::vector<int> history) = 0;
 	std::map<std::string, float> GetStrategy();
 	void SetStrategy(std::string& n, std::map<std::string, float>& p);
 
@@ -15,10 +15,10 @@ private:
 };
 
 class DefectStrategy : public Strategy{
-	bool MakeChoice() override;
+	bool MakeChoice(std::vector<int> history) override;
 };
 
 
 class TitForTat : public Strategy{
-	bool MakeChoice() override;
+	bool MakeChoice(std::vector<int> history) override;
 };
