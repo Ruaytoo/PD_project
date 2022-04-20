@@ -16,6 +16,7 @@ public:
 	int choice;
 	Agent(Strategy *strategy);
 	Strategy *strategy;
+    int GetAgent_ID();
 
 private:
 	int Agent_ID;	

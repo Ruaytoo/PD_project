@@ -1,9 +1,14 @@
+#pragma once
 #include "agent.h"
 
 Agent::Agent(Strategy* strategy)
 :strategy(strategy) 
 {
 
+}
+
+int Agent::GetAgent_ID() {
+    return Agent_ID;
 }
 
 void Agent::PrintStrategy() {
