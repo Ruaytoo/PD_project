@@ -5,6 +5,7 @@
 #include "strategy.h"
 
 
+
 class Game
 {
 private:
@@ -13,6 +14,6 @@ private:
 public:
 	std::vector<Agent> agents;
 	Game(std::vector<Agent> agents,
-		float cc, float dc, float cd, float dd, float p);
+		float cc, float dc, float cd, float dd, double p);
 	void round();
 };

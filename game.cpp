@@ -4,7 +4,7 @@
 #include <iostream>
 
 Game::Game(std::vector<Agent> agents,
-	float cc, float dc, float cd, float dd, float p)
+	float cc, float dc, float cd, float dd, double p)
 :payoff(cc, dc, cd, dd, p), agents(agents)
 {
 }
