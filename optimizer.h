@@ -1,8 +1,8 @@
 #pragma once
-#include "agent.h"
+#include "strategy.h"
 
 class optimizer
 {
 public:
-	void step(agent agent);
+	void step(Agent agent);
 };

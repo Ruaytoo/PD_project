@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include <random>
-#include "agent.h"
 #include "payoff.h"
 #include "strategy.h"
 

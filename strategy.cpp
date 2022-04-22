@@ -2,7 +2,7 @@
 #include "strategy.h"
 #include <string>
 #include <vector>
-#include <iostream>
+
 
 std::map<std::string, float> Strategy::GetStrategy() {
 	return params;
@@ -20,7 +20,8 @@ bool DefectStrategy::MakeChoice(std::vector<Agent> agents, int agent_index) {
 
 bool TitForTat::MakeChoice(std::vector<Agent> agents, int agent_index) {
     if (agents[agent_index].history.size() == 0) {
-        if (agents[agent_index].GetAgent_ID() == 1) {
+        int init = rand() % 2;
+        if (init % 2 == 0) {
             return start_strategy1;
         }
         else {
@@ -28,11 +29,11 @@ bool TitForTat::MakeChoice(std::vector<Agent> agents, int agent_index) {
         }
     }
     else {
-        if (agent_index == 1) {
-            return agents[0].history.back();
+        if (agent_index % 2 == 0) {
+            return agents[agent_index + 1].history.back();
         }
         else {
-            return agents[1].history.back();
+            return agents[agent_index - 1].history.back();
         }
     }
 }

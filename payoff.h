@@ -1,5 +1,5 @@
 #pragma once
-#include "agent.h"
+#include "strategy.h"
 #include <random>
 #define C 10000
 

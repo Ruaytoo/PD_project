@@ -1,5 +1,5 @@
 #pragma once
-#include "agent.h"
+#include "strategy.h"
 
 Agent::Agent(Strategy* strategy)
 :strategy(strategy) 

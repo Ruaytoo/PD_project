@@ -1,8 +1,8 @@
 #pragma once
-#include "agent.h"
 #include <string>
 #include <map>
 #include <vector>
+#include <iostream>
 
 class Strategy
 {
@@ -28,4 +28,19 @@ class TitForTat : public Strategy{
 private:
     int start_strategy1 = 1;
     int start_strategy2 = 1;
+};
+
+class Agent
+{
+public:
+    void PrintStrategy();
+    float score;
+    std::vector<int> history;
+    int choice;
+    Agent(Strategy *strategy);
+    Strategy *strategy;
+    int GetAgent_ID();
+
+private:
+    int Agent_ID;
 };
