@@ -2,6 +2,9 @@
 #include "game.h"
 #include <ctime>
 #include <iostream>
+#include <algorithm>
+#include <iterator>
+#include <random>
 
 Game::Game(std::vector<Agent> agents,
 	float cc, float dc, float cd, float dd, double p)
