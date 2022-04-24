@@ -4,6 +4,8 @@
 #include <vector>
 #include <iostream>
 
+class Agent;
+
 class Strategy
 {
 public:

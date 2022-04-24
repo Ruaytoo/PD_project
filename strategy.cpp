@@ -1,21 +1,20 @@
-#pragma once
 #include "strategy.h"
 #include <string>
 #include <vector>
 
 
 std::map<std::string, float> Strategy::GetStrategy() {
-	return params;
+    return params;
 }
 
 void Strategy::SetStrategy(std::string& n, std::map<std::string, float>& p)
 {
-		name = n;
-		params = p;
+    name = n;
+    params = p;
 };
 
 bool DefectStrategy::MakeChoice(std::vector<Agent> agents, int agent_index) {
-	return 0;
+    return 0;
 }
 
 bool TitForTat::MakeChoice(std::vector<Agent> agents, int agent_index) {
