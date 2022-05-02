@@ -3,7 +3,7 @@
 Agent::Agent(Strategy* strategy)
         :strategy(strategy)
 {
-
+    
 }
 
 int Agent::GetAgent_ID() {
@@ -17,7 +17,7 @@ void Agent::PrintStrategy() {
     int i = 1;
     for (const auto& param : strat) {
         std::cout << param.first << " : " << param.second;
-        if (i < strat.size()) {
+        if (i < (int) strat.size()) {
             std::cout << ", ";
         }
         else {
