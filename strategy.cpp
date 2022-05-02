@@ -18,7 +18,7 @@ bool DefectStrategy::MakeChoice(std::vector<Agent> agents, int agent_index) {
 }
 
 bool TitForTat::MakeChoice(std::vector<Agent> agents, int agent_index) {
-    if (agents[agent_index].history.size() == 0) {
+    if (agents[agent_index].history.empty()) {
         int init = rand() % 2;
         if (init % 2 == 0) {
             return start_strategy1;
