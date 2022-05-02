@@ -3,7 +3,7 @@
 Agent::Agent(Strategy* strategy)
         :strategy(strategy)
 {
-    
+    score = 0;
 }
 
 int Agent::GetAgent_ID() {
