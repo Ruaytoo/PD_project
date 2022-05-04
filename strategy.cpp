@@ -80,34 +80,23 @@ bool GeneticStrategy::MakeChoice(std::vector<Agent> agents, int agent_index)
 {
     int asBinary = 0;
 
-    if (agents.at(agent_index).history.size() == 0)
-        return agents.at(agent_index).strategy->chromosome.at(asBinary);
-
-    else if (agents.at(agent_index).history.size() == 1)
+    if (agents.at(agent_index).history.size() <= 4)
     {
-        for (auto i : agents.at(agent_index).strategy->chromosome)
+        for (auto i : agents.at(agent_index).history)
         {
             asBinary *= 2;
             asBinary += i;
         }
-        return agents.at(agent_index).strategy->chromosome.at(1 + asBinary);
-    }
-    else if (agents.at(agent_index).history.size() == 2)
-    {
-        for (auto i : agents.at(agent_index).strategy->chromosome)
-        {
-            asBinary *= 2;
-            asBinary += i;
-        }
-        return agents.at(agent_index).strategy->chromosome.at(3 + asBinary);
+        
     }
     else
     {
-        for (auto i : agents.at(agent_index).strategy->chromosome)
+        for (int i = 0; i < 6; ++i)
         {
             asBinary *= 2;
-            asBinary += i;
+            asBinary += agents.at(agent_index).history.at(i);
         }
-        return agents.at(agent_index).strategy->chromosome.at(7 + asBinary);
     }
+    
+    return agents.at(agent_index).strategy->chromosome.at(asBinary);
 }

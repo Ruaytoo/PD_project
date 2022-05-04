@@ -13,6 +13,12 @@ int main()
 	for (unsigned long i = 1; i <= R; ++i)
 	{
 		game.round();
+		game.Generate_new_population();
+	}
+
+	for (unsigned long i = 1; i <= 40; ++i)
+	{
+		game.round();
 	}
 
 	int s = 0;

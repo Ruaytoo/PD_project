@@ -21,6 +21,8 @@ void Payoff::UpdateScore(Agent* agent1, Agent* agent2,
     agent2->score += score2;
     agent1->history.push_back(choice1);
     agent2->history.push_back(choice2);
+    agent1->history.push_back(choice2);
+    agent2->history.push_back(choice1);
 }
 
 void Payoff::compute_score(Agent *agent1, Agent *agent2)
