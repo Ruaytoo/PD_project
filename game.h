@@ -13,8 +13,7 @@ private:
 
 public:
 	std::vector<Agent> agents;
-	Game(std::vector<Agent> agents,
-		float cc, float dc, float cd, float dd, double p);
+	Game(float cc, float dc, float cd, float dd, double p);
 	void round();
     void Generate_new_population();
 };

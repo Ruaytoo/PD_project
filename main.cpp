@@ -1,14 +1,31 @@
 #include "game.h"
 #include <iostream>
-#define N 40
+#define N 6
 #define R 40
 
 
 int main()
 {
-	TitForTat strategy;
-	std::vector<Agent> agents(N, &strategy);
-	Game game(agents, 5, 3, 10, 1, (double) 0.01);
+	Game game(5, 3, 10, 1, (double) 0.01);
+
+	for (int i = 0; i < N; ++i)
+	{
+		DefectStrategy strategy;
+		Agent agent;
+		agent.strategy = &strategy;
+		game.agents.push_back(agent);
+		//std::cout << agent.strategy->MakeChoice(game.agents, i) << ' ';
+		if (i > 1)
+			std::cout << game.agents.at(i).strategy->MakeChoice(game.agents, i) << ' ';
+	}
+
+
+	std::cout << '\n';
+
+	for (int i = 0; i < N; ++i)
+	{
+		std::cout << game.agents.at(i).strategy->MakeChoice(game.agents, i);
+	}
 
 	for (unsigned long i = 1; i <= R; ++i)
 	{

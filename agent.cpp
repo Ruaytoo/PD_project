@@ -1,7 +1,6 @@
 #include "strategy.h"
 
-Agent::Agent(Strategy* strategy)
-        :strategy(strategy)
+Agent::Agent()
 {
     score = 0;
 }

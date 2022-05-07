@@ -54,7 +54,7 @@ public:
     float score;
     std::vector<int> history;
     int choice;
-    Agent(Strategy *strategy);
+    Agent();
     Strategy *strategy;
     int GetAgent_ID();
 

@@ -6,9 +6,8 @@
 #include <random>
 #include <chrono>  
 
-Game::Game(std::vector<Agent> agents,
-	float cc, float dc, float cd, float dd, double p)
-:payoff(cc, dc, cd, dd, (float) p), agents(agents)
+Game::Game(float cc, float dc, float cd, float dd, double p)
+:payoff(cc, dc, cd, dd, (float) p)
 {
     std::cout << "game created \n";
 }
