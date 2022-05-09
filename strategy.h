@@ -24,7 +24,15 @@ private:
 
 class DefectStrategy : public Strategy
 {
+public:
 	bool MakeChoice(std::vector<Agent> agents, int agent_index) override;
+};
+
+
+class CoopStrategy : public Strategy
+{
+public:
+    bool MakeChoice(std::vector<Agent> agents, int agent_index) override;
 };
 
 

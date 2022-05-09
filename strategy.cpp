@@ -2,10 +2,16 @@
 #include <string>
 #include <vector>
 #include <string>
+#include <algorithm>
+#include <iterator>
+#include <random>
+#include <chrono>  
+
 
 Strategy::Strategy ()
 {
-    for (int j = 0; j < 15; j++)
+    std::srand(std::time(0));
+    for (int j = 0; j < 64; j++)
         {
             int random_state = rand() % 2;
             if (random_state % 2 == 0)
@@ -39,6 +45,12 @@ void Strategy::SetStrategy(std::string& n, std::map<std::string, float>& p)
 bool DefectStrategy::MakeChoice(std::vector<Agent> agents, int agent_index) 
 {
     return 0;
+}
+
+
+bool CoopStrategy::MakeChoice(std::vector<Agent> agents, int agent_index) 
+{
+    return 1;
 }
 
 

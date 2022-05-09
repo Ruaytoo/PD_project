@@ -3,7 +3,6 @@
 #include <random>
 #include "payoff.h"
 #include "strategy.h"
-#include "Population.h"
 
 
 class Game
