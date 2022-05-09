@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# ignore the file literally named DS_Store
+.DS_Store

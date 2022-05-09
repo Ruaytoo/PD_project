@@ -9,7 +9,7 @@
 Game::Game(float cc, float dc, float cd, float dd, double p)
 :payoff(cc, dc, cd, dd, (float) p)
 {
-    std::cout << "game created \n";
+
 }
 
 
