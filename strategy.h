@@ -14,7 +14,6 @@ public:
 	void SetStrategy(std::string& n, std::map<std::string, float>& p);
     Strategy();
     std::vector<int> chromosome;
-
 private:
 	std::map<std::string, float> params;
 	std::string name;
@@ -25,32 +24,32 @@ private:
 class DefectStrategy : public Strategy
 {
 public:
-	bool MakeChoice(const std::vector<Agent>& agents, int agent_index) override;
+	bool MakeChoice(const std::vector<Agent>& agents, int agent_index);
 };
 
 
 class CoopStrategy : public Strategy
 {
 public:
-    bool MakeChoice(const std::vector<Agent>& agents, int agent_index) override;
+    bool MakeChoice(const std::vector<Agent>& agents, int agent_index);
 };
 
 
 class TitForTat : public Strategy
 {
-	bool MakeChoice(const std::vector<Agent>& agents, int agent_index) override;
+	bool MakeChoice(const std::vector<Agent>& agents, int agent_index);
     void SetStart(int index, bool choice);
 
 private:
-    int start_strategy1 = 1;
-    int start_strategy2 = 1;
+    int start_strategy1;
+    int start_strategy2;
 };
 
 
 
 class GeneticStrategy : public Strategy
 {
-    bool MakeChoice(const std::vector<Agent>& agents, int agent_index) override;
+    bool MakeChoice(const std::vector<Agent>& agents, int agent_index);
 };
 
 

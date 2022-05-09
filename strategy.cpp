@@ -10,7 +10,7 @@
 
 Strategy::Strategy ()
 {
-    std::srand(std::time(0));
+    std::srand( (unsigned int) std::time(0));
     for (int j = 0; j < 70; j++)
         {
             int random_state = rand() % 2;
@@ -42,7 +42,7 @@ void Strategy::SetStrategy(std::string& n, std::map<std::string, float>& p)
 
 
 
-bool DefectStrategy::MakeChoice(const std::vector<Agent>& agents, int agent_index) 
+/*bool DefectStrategy::MakeChoice(const std::vector<Agent>& agents, int agent_index) 
 {
     return 0;
 }
@@ -51,13 +51,13 @@ bool DefectStrategy::MakeChoice(const std::vector<Agent>& agents, int agent_inde
 bool CoopStrategy::MakeChoice(const std::vector<Agent>& agents, int agent_index) 
 {
     return 1;
-}
+}*/
 
 
 
 bool TitForTat::MakeChoice(const std::vector<Agent>& agents, int agent_index) 
 {
-    if (agents[agent_index].history.empty()) {
+    if (agents[ (unsigned long) agent_index].history.empty()) {
         int init = rand() % 2;
         if (init % 2 == 0) {
             return start_strategy1;
@@ -68,10 +68,10 @@ bool TitForTat::MakeChoice(const std::vector<Agent>& agents, int agent_index)
     }
     else {
         if (agent_index % 2 == 0) {
-            return agents[agent_index + 1].history.back();
+            return agents[ (unsigned long) agent_index + 1].history.back();
         }
         else {
-            return agents[agent_index - 1].history.back();
+            return agents[ (unsigned long) agent_index - 1].history.back();
         }
     }
 }
@@ -90,13 +90,13 @@ void TitForTat::SetStart(int index, bool choice) {
 
 bool GeneticStrategy::MakeChoice(const std::vector<Agent>& agents, int agent_index)
 {
-    int asBinary = 0;
+    unsigned long asBinary = 0;
 
     for (int i = 64; i < 70; ++i)
     {
         asBinary *= 2;
-        asBinary += agents.at(agent_index).strategy->chromosome.at(i);
+        asBinary += (unsigned long) agents.at( (unsigned long) agent_index).strategy->chromosome.at((unsigned long) i);
     }
     
-    return agents.at(agent_index).strategy->chromosome.at(asBinary);
+    return agents.at( (unsigned long) agent_index).strategy->chromosome.at(asBinary);
 }

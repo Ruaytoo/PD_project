@@ -27,8 +27,8 @@ void Game::round()
 
 std::vector<int> Mutate(std::vector<int>& chromosome)
 {
-    std::srand(std::time(0));
-    int mutation_index = rand() % chromosome.size();
+    std::srand( (unsigned int) std::time(0) );
+    unsigned int mutation_index = (unsigned int) rand() % chromosome.size();
     std::vector<int> new_chromosome = chromosome;
     int OldValue = chromosome[mutation_index];
     int NewValue;
@@ -47,17 +47,17 @@ std::vector<int> Mutate(std::vector<int>& chromosome)
 
 std::vector<int> Crossover(std::vector<int>& first_chromosome, std::vector<int>& second_chromosome)
 {
-    std::srand(std::time(0));
+    std::srand( (unsigned int)std::time(0) );
 
     std::vector<int> chromosome;
-    int random_state = rand() % first_chromosome.size();
+    unsigned int random_state = (unsigned int) rand() % first_chromosome.size();
 
-    for (int i = 0; i < random_state; i++)
+    for (unsigned int i = 0; i < random_state; i++)
     {
-        chromosome.push_back(first_chromosome[i]);
+        chromosome.push_back( first_chromosome[(unsigned long)i] );
     }
 
-    for (int i = random_state; i < second_chromosome.size(); i++)
+    for (unsigned int i = random_state; i < second_chromosome.size(); i++)
     {
         chromosome.push_back(second_chromosome[i]);
     }
@@ -78,13 +78,13 @@ void Game::Generate_new_population()
     std::vector<Agent> new_agents;
     std::sort(agents.begin(), agents.end(), comp_agents);
 
-    for (int i = 0; i < agents.size() / 2; i += 1)
+    for (unsigned long i = 0; i < agents.size() / 2; i += 1)
     {
-        int random_state = rand() % (agents.size()/2);
+        unsigned long random_state = (unsigned long) rand() % (agents.size()/2);
         Agent agent_1 = agents[random_state];
-        random_state = rand() % (agents.size());
+        random_state = (unsigned long) rand() % (agents.size());
         Agent agent_2 = agents[random_state];
-        Agent agent = agents[i];
+        Agent agent = agents[(unsigned long) i];
 
         std::vector<int> first_chromosome = agent_1.strategy->chromosome;
         std::vector<int> second_chromosome = agent_2.strategy->chromosome;
@@ -95,11 +95,11 @@ void Game::Generate_new_population()
         agent.strategy->chromosome = Mutate(new_chromosome);
         new_agents.push_back(agent);
 
-        random_state = rand() % (agents.size()/2);
+        random_state = (unsigned long) rand() % (agents.size()/2);
         agent_1 = agents[random_state];
-        random_state = rand() % (agents.size());
+        random_state = (unsigned long) rand() % (agents.size());
         agent_2 = agents[random_state];
-        agent = agents[i];
+        agent = agents[(unsigned long) i];
 
         first_chromosome = agent_1.strategy->chromosome;
         second_chromosome = agent_2.strategy->chromosome;
