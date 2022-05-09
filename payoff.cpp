@@ -23,6 +23,22 @@ void Payoff::UpdateScore(Agent* agent1, Agent* agent2,
     agent2->history.push_back(choice2);
     agent1->history.push_back(choice2);
     agent2->history.push_back(choice1);
+
+    agent1->strategy->chromosome.at(69) = agent1->strategy->chromosome.at(67);
+    agent1->strategy->chromosome.at(68) = agent1->strategy->chromosome.at(66);
+    agent1->strategy->chromosome.at(67) = agent1->strategy->chromosome.at(65);
+    agent1->strategy->chromosome.at(66) = agent1->strategy->chromosome.at(64);
+
+    agent1->strategy->chromosome.at(65) = choice2;
+    agent1->strategy->chromosome.at(64) = choice1;
+
+    agent2->strategy->chromosome.at(69) = agent2->strategy->chromosome.at(67);
+    agent2->strategy->chromosome.at(68) = agent2->strategy->chromosome.at(66);
+    agent2->strategy->chromosome.at(67) = agent2->strategy->chromosome.at(65);
+    agent2->strategy->chromosome.at(66) = agent2->strategy->chromosome.at(64);
+
+    agent2->strategy->chromosome.at(65) = choice1;
+    agent2->strategy->chromosome.at(64) = choice2;
 }
 
 void Payoff::compute_score(Agent *agent1, Agent *agent2)

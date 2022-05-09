@@ -9,7 +9,7 @@ class Agent;
 class Strategy
 {
 public:
-	virtual bool MakeChoice(std::vector<Agent> agents, int agent_index) = 0;
+	virtual bool MakeChoice(const std::vector<Agent>& agents, int agent_index) = 0;
 	std::map<std::string, float> GetStrategy();
 	void SetStrategy(std::string& n, std::map<std::string, float>& p);
     Strategy();
@@ -25,20 +25,20 @@ private:
 class DefectStrategy : public Strategy
 {
 public:
-	bool MakeChoice(std::vector<Agent> agents, int agent_index) override;
+	bool MakeChoice(const std::vector<Agent>& agents, int agent_index) override;
 };
 
 
 class CoopStrategy : public Strategy
 {
 public:
-    bool MakeChoice(std::vector<Agent> agents, int agent_index) override;
+    bool MakeChoice(const std::vector<Agent>& agents, int agent_index) override;
 };
 
 
 class TitForTat : public Strategy
 {
-	bool MakeChoice(std::vector<Agent> agents, int agent_index) override;
+	bool MakeChoice(const std::vector<Agent>& agents, int agent_index) override;
     void SetStart(int index, bool choice);
 
 private:
@@ -50,7 +50,7 @@ private:
 
 class GeneticStrategy : public Strategy
 {
-    bool MakeChoice(std::vector<Agent> agents, int agent_index) override;
+    bool MakeChoice(const std::vector<Agent>& agents, int agent_index) override;
 };
 
 

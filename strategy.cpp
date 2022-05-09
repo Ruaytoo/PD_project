@@ -11,7 +11,7 @@
 Strategy::Strategy ()
 {
     std::srand(std::time(0));
-    for (int j = 0; j < 64; j++)
+    for (int j = 0; j < 70; j++)
         {
             int random_state = rand() % 2;
             if (random_state % 2 == 0)
@@ -42,20 +42,20 @@ void Strategy::SetStrategy(std::string& n, std::map<std::string, float>& p)
 
 
 
-bool DefectStrategy::MakeChoice(std::vector<Agent> agents, int agent_index) 
+bool DefectStrategy::MakeChoice(const std::vector<Agent>& agents, int agent_index) 
 {
     return 0;
 }
 
 
-bool CoopStrategy::MakeChoice(std::vector<Agent> agents, int agent_index) 
+bool CoopStrategy::MakeChoice(const std::vector<Agent>& agents, int agent_index) 
 {
     return 1;
 }
 
 
 
-bool TitForTat::MakeChoice(std::vector<Agent> agents, int agent_index) 
+bool TitForTat::MakeChoice(const std::vector<Agent>& agents, int agent_index) 
 {
     if (agents[agent_index].history.empty()) {
         int init = rand() % 2;
@@ -88,26 +88,14 @@ void TitForTat::SetStart(int index, bool choice) {
 }
 
 
-bool GeneticStrategy::MakeChoice(std::vector<Agent> agents, int agent_index)
+bool GeneticStrategy::MakeChoice(const std::vector<Agent>& agents, int agent_index)
 {
     int asBinary = 0;
 
-    if (agents.at(agent_index).history.size() <= 4)
+    for (int i = 64; i < 70; ++i)
     {
-        for (auto i : agents.at(agent_index).history)
-        {
-            asBinary *= 2;
-            asBinary += i;
-        }
-        
-    }
-    else
-    {
-        for (int i = 0; i < 6; ++i)
-        {
-            asBinary *= 2;
-            asBinary += agents.at(agent_index).history.at(i);
-        }
+        asBinary *= 2;
+        asBinary += agents.at(agent_index).strategy->chromosome.at(i);
     }
     
     return agents.at(agent_index).strategy->chromosome.at(asBinary);

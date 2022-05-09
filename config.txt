@@ -1,0 +1,5 @@
+#number of agents
+N = 42
+
+#number of training rounds
+R = 400
