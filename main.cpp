@@ -1,6 +1,10 @@
 #include "main.h"
+#include "Unit_tests.cpp"
 
 int main() {
+    RunTest(TestMutation, "MutationTest");
+    RunTest(TestCrossover, "CrossoverTest");
+
   int N = 42;
   int R = 200;
   int E = 10;

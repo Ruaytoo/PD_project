@@ -15,3 +15,5 @@ class Game {
   void round();
   void Generate_new_population();
 };
+
+

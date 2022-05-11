@@ -23,9 +23,12 @@ void Game::round() {
   }
 }
 
-std::vector<int> Mutate(std::vector<int>& chromosome) {
+std::vector<int> Mutate(std::vector<int>& chromosome,
+                        unsigned int mutation_index=100) {
   std::srand((unsigned int)std::time(0));
-  unsigned int mutation_index = (unsigned int)rand() % chromosome.size();
+  if (mutation_index == 100) {
+      mutation_index = (unsigned int)rand() % chromosome.size();
+  }
   std::vector<int> new_chromosome = chromosome;
 
   int OldValue = chromosome[mutation_index];
@@ -42,12 +45,15 @@ std::vector<int> Mutate(std::vector<int>& chromosome) {
   return chromosome;
 }
 
-std::vector<int> Crossover(std::vector<int>& first_chromosome,
-                           std::vector<int>& second_chromosome) {
+std::vector<int> Crossover(std::vector<int>& first_chromosome, std::vector<int>& second_chromosome,
+                           unsigned int random_state = 100) {
   std::srand((unsigned int)std::time(0));
 
   std::vector<int> chromosome;
-  unsigned int random_state = (unsigned int)rand() % first_chromosome.size();
+  if (random_state == 100)
+  {
+      random_state = (unsigned int)rand() % (first_chromosome.size() + 1);
+  }
 
   for (unsigned int i = 0; i < random_state; i++) {
     chromosome.push_back(first_chromosome[(unsigned long)i]);
