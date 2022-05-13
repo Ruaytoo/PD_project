@@ -6,7 +6,7 @@ Payoff::Payoff(float dd, float dc, float cd, float cc, float p) : distr(0, C) {
   this->dc = dc;
   this->cd = cd;
   this->cc = cc;
-
+  
   this->p = p;
 
   std::random_device rd;

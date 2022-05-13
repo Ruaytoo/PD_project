@@ -29,6 +29,8 @@ std::vector<int> Mutate(std::vector<int>& chromosome,
   if (mutation_index == 100) {
       mutation_index = (unsigned int)rand() % chromosome.size();
   }
+  else if (mutation_index > 69)
+    throw std::runtime_error("wrong strategy_name");
   std::vector<int> new_chromosome = chromosome;
 
   int OldValue = chromosome[mutation_index];
