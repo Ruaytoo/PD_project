@@ -1,0 +1,30 @@
+\hypertarget{payoff_8h_source}{}\doxysection{payoff.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}strategy.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define C 10000}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_payoff}{Payoff}} \{}
+\DoxyCodeLine{8  \textcolor{keyword}{private}:}
+\DoxyCodeLine{9   std::random\_device rd;}
+\DoxyCodeLine{10   std::mt19937 gen;}
+\DoxyCodeLine{11   std::uniform\_int\_distribution<> distr;}
+\DoxyCodeLine{12   }
+\DoxyCodeLine{14   \textcolor{keywordtype}{void} UpdateScore(\mbox{\hyperlink{class_agent}{Agent}}* agent1, \mbox{\hyperlink{class_agent}{Agent}}* agent2, }
+\DoxyCodeLine{15                    \textcolor{keywordtype}{float} score1, \textcolor{keywordtype}{float} score2,}
+\DoxyCodeLine{16                    \textcolor{keywordtype}{int} choice1, \textcolor{keywordtype}{int} choice2);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18  \textcolor{keyword}{public}:}
+\DoxyCodeLine{20   \textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_a8ed756fc60c92fe6707695114850fc6a}{p}};}
+\DoxyCodeLine{22   \textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_ab0b00384385b50bd601165f1bf8c1453}{dd}};}
+\DoxyCodeLine{24   \textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_ab13c0e64bee1ae134ed80f9fc34bdd21}{dc}};}
+\DoxyCodeLine{26   \textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_a9591b00730adebcf908451876b2b1813}{cd}};}
+\DoxyCodeLine{28   \textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_a7fe47edcea42e21700f1593303e81beb}{cc}}; }
+\DoxyCodeLine{29   \mbox{\hyperlink{class_payoff}{Payoff}}(\textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_ab0b00384385b50bd601165f1bf8c1453}{dd}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_ab13c0e64bee1ae134ed80f9fc34bdd21}{dc}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_a9591b00730adebcf908451876b2b1813}{cd}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_a7fe47edcea42e21700f1593303e81beb}{cc}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{class_payoff_a8ed756fc60c92fe6707695114850fc6a}{p}});}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_payoff_a3e4d53c73d58bd83977c9077ce44c0e7}{compute\_score}}(\mbox{\hyperlink{class_agent}{Agent}}* agent1, \mbox{\hyperlink{class_agent}{Agent}}* agent2);}
+\DoxyCodeLine{33 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,30 @@
+\hypertarget{game_8h_source}{}\doxysection{game.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}payoff.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}strategy.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_game}{Game}} \{}
+\DoxyCodeLine{9  \textcolor{keyword}{private}:}
+\DoxyCodeLine{11   \mbox{\hyperlink{class_payoff}{Payoff}} payoff;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13  \textcolor{keyword}{public}:}
+\DoxyCodeLine{15   std::vector<Agent> \mbox{\hyperlink{class_game_ae61838683b66acb1d903c8b9195d3dbd}{agents}};}
+\DoxyCodeLine{16   \mbox{\hyperlink{class_game}{Game}}(\textcolor{keywordtype}{float} cc, \textcolor{keywordtype}{float} dc, \textcolor{keywordtype}{float} cd, \textcolor{keywordtype}{float} dd, \textcolor{keywordtype}{double} p);}
+\DoxyCodeLine{18   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_a62b0a6e7880bcbe1c64bbe362ce372bd}{round}}();}
+\DoxyCodeLine{20   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_a8ff89d63005e21a8d3dbc4e948b6e099}{Generate\_new\_population}}();}
+\DoxyCodeLine{21 \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{24 std::vector<int> Mutate(std::vector<int>\& chromosome,}
+\DoxyCodeLine{25                         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mutation\_index=100);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28 std::vector<int> Crossover(std::vector<int>\& first\_chromosome, std::vector<int>\& second\_chromosome,}
+\DoxyCodeLine{29                            \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} random\_state = 100);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32 \textcolor{keywordtype}{bool} comp\_agents(\mbox{\hyperlink{class_agent}{Agent}}\& agent\_1, \mbox{\hyperlink{class_agent}{Agent}}\& agent\_2);}
+\DoxyCodeLine{33 }
+
+\end{DoxyCode}

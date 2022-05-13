@@ -1,0 +1,60 @@
+\hypertarget{class_strategy}{}\doxysection{Strategy Class Reference}
+\label{class_strategy}\index{Strategy@{Strategy}}
+
+
+виртуальный класс стратегии, от которого наследуются отдельные конкретные алгоритмы выбора хода  
+
+
+
+
+{\ttfamily \#include $<$strategy.\+h$>$}
+
+Inheritance diagram for Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_strategy}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_strategy_a5f6df654875d6d009e0a7c92d9e1e727}{Make\+Choice}} (const std\+::vector$<$ \mbox{\hyperlink{class_agent}{Agent}} $>$ \&agents, int agent\+\_\+index)=0
+\begin{DoxyCompactList}\small\item\em функция, делающая выбор, какой ход предпринять \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_strategy_a49251646d7041b073f1e527c88fe64c9}\label{class_strategy_a49251646d7041b073f1e527c88fe64c9}} 
+std\+::map$<$ std\+::string, float $>$ {\bfseries Get\+Strategy} ()
+\item 
+\mbox{\Hypertarget{class_strategy_a558fd31590ee26f102eafe391ea73cf1}\label{class_strategy_a558fd31590ee26f102eafe391ea73cf1}} 
+void {\bfseries Set\+Strategy} (std\+::string \&n, std\+::map$<$ std\+::string, float $>$ \&p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_strategy_addf3cb683d8c3b9047095f4439aeb322}\label{class_strategy_addf3cb683d8c3b9047095f4439aeb322}} 
+std\+::vector$<$ int $>$ {\bfseries chromosome}
+\begin{DoxyCompactList}\small\item\em хромосома, в которой хранится алгоритм выбора и 3 последних хода \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+виртуальный класс стратегии, от которого наследуются отдельные конкретные алгоритмы выбора хода 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_strategy_a5f6df654875d6d009e0a7c92d9e1e727}\label{class_strategy_a5f6df654875d6d009e0a7c92d9e1e727}} 
+\index{Strategy@{Strategy}!MakeChoice@{MakeChoice}}
+\index{MakeChoice@{MakeChoice}!Strategy@{Strategy}}
+\doxysubsubsection{\texorpdfstring{MakeChoice()}{MakeChoice()}}
+{\footnotesize\ttfamily virtual bool Strategy\+::\+Make\+Choice (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_agent}{Agent}} $>$ \&}]{agents,  }\item[{int}]{agent\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+функция, делающая выбор, какой ход предпринять 
+
+
+
+Implemented in \mbox{\hyperlink{class_defect_strategy_a7ade74f034a031e9af23dcaeccb1f179}{Defect\+Strategy}}, and \mbox{\hyperlink{class_coop_strategy_ab626ce44870b0dd75b262ff5fbc687ba}{Coop\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+strategy.\+h\item 
+strategy.\+cpp\end{DoxyCompactItemize}

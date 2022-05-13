@@ -1,0 +1,44 @@
+\hypertarget{class_agent}{}\doxysection{Agent Class Reference}
+\label{class_agent}\index{Agent@{Agent}}
+
+
+агент, для которого хранится история и стратегия  
+
+
+
+
+{\ttfamily \#include $<$strategy.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_agent_ae89a2be6bcd3879bfd25017cefac6dd6}\label{class_agent_ae89a2be6bcd3879bfd25017cefac6dd6}} 
+void {\bfseries Print\+Strategy} ()
+\item 
+\mbox{\Hypertarget{class_agent_acd8bf88d1e01a0757ddb1b7c80761536}\label{class_agent_acd8bf88d1e01a0757ddb1b7c80761536}} 
+int {\bfseries Get\+Agent\+\_\+\+ID} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_agent_afe32983116716b986d5ba6a2ace6b099}\label{class_agent_afe32983116716b986d5ba6a2ace6b099}} 
+float {\bfseries score}
+\begin{DoxyCompactList}\small\item\em текущий счет игрока \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_agent_a43b84fc6aa29d43196e0bc5b48a4240d}\label{class_agent_a43b84fc6aa29d43196e0bc5b48a4240d}} 
+std\+::vector$<$ int $>$ {\bfseries history}
+\begin{DoxyCompactList}\small\item\em история ходов\+: четные индексы -\/ ходы противника \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_agent_a34e3a00b9c8e42c360b4f1b4ec455def}\label{class_agent_a34e3a00b9c8e42c360b4f1b4ec455def}} 
+int {\bfseries choice}
+\begin{DoxyCompactList}\small\item\em текущий выбор игрока \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_agent_a56740e7d09d3e9f96c108696dfb500c9}\label{class_agent_a56740e7d09d3e9f96c108696dfb500c9}} 
+\mbox{\hyperlink{class_strategy}{Strategy}} $\ast$ {\bfseries strategy}
+\begin{DoxyCompactList}\small\item\em указатель, на текущую стратегию игрока \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+агент, для которого хранится история и стратегия 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+strategy.\+h\item 
+agent.\+cpp\end{DoxyCompactItemize}
