@@ -1,11 +1,14 @@
 #number of agents
-N = 2
+N = 1000
 
 #number of training rounds
-R = 400
+R = 100
 
 #number of experiments
-E = 100
+E = 10
 
 #name of strategy
 strategy = GeneticStrategy
+
+#evolute chromosome
+train = 1

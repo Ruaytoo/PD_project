@@ -1,0 +1,47 @@
+\hypertarget{class_payoff}{}\doxysection{Payoff Class Reference}
+\label{class_payoff}\index{Payoff@{Payoff}}
+
+
+класс для пересчета текущего скора каждого игрока  
+
+
+
+
+{\ttfamily \#include $<$payoff.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_payoff_a890640fd22cf7d4982726329b3c060b2}\label{class_payoff_a890640fd22cf7d4982726329b3c060b2}} 
+{\bfseries Payoff} (float \mbox{\hyperlink{class_payoff_ab0b00384385b50bd601165f1bf8c1453}{dd}}, float \mbox{\hyperlink{class_payoff_ab13c0e64bee1ae134ed80f9fc34bdd21}{dc}}, float \mbox{\hyperlink{class_payoff_a9591b00730adebcf908451876b2b1813}{cd}}, float \mbox{\hyperlink{class_payoff_a7fe47edcea42e21700f1593303e81beb}{cc}}, float \mbox{\hyperlink{class_payoff_a8ed756fc60c92fe6707695114850fc6a}{p}})
+\item 
+\mbox{\Hypertarget{class_payoff_a3e4d53c73d58bd83977c9077ce44c0e7}\label{class_payoff_a3e4d53c73d58bd83977c9077ce44c0e7}} 
+void {\bfseries compute\+\_\+score} (\mbox{\hyperlink{class_agent}{Agent}} $\ast$agent1, \mbox{\hyperlink{class_agent}{Agent}} $\ast$agent2)
+\begin{DoxyCompactList}\small\item\em функция для изменения счета 2х игроков \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_payoff_a8ed756fc60c92fe6707695114850fc6a}\label{class_payoff_a8ed756fc60c92fe6707695114850fc6a}} 
+float {\bfseries p}
+\begin{DoxyCompactList}\small\item\em вероятность ошибки в начислении счета \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_payoff_ab0b00384385b50bd601165f1bf8c1453}\label{class_payoff_ab0b00384385b50bd601165f1bf8c1453}} 
+float {\bfseries dd}
+\begin{DoxyCompactList}\small\item\em очки за обоюдное предательство \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_payoff_ab13c0e64bee1ae134ed80f9fc34bdd21}\label{class_payoff_ab13c0e64bee1ae134ed80f9fc34bdd21}} 
+float {\bfseries dc}
+\begin{DoxyCompactList}\small\item\em очки за предательство + сотрудничество \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_payoff_a9591b00730adebcf908451876b2b1813}\label{class_payoff_a9591b00730adebcf908451876b2b1813}} 
+float {\bfseries cd}
+\begin{DoxyCompactList}\small\item\em очки за сотрудничество + предательство \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_payoff_a7fe47edcea42e21700f1593303e81beb}\label{class_payoff_a7fe47edcea42e21700f1593303e81beb}} 
+float {\bfseries cc}
+\begin{DoxyCompactList}\small\item\em очки за обоюдное сотрудничество \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+класс для пересчета текущего скора каждого игрока 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+payoff.\+h\item 
+payoff.\+cpp\end{DoxyCompactItemize}

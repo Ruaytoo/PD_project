@@ -1,0 +1,67 @@
+\hypertarget{strategy_8h_source}{}\doxysection{strategy.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_agent}{Agent}};}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_strategy}{Strategy}} \{}
+\DoxyCodeLine{12  \textcolor{keyword}{public}:}
+\DoxyCodeLine{14   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_strategy_a5f6df654875d6d009e0a7c92d9e1e727}{MakeChoice}}(\textcolor{keyword}{const} std::vector<Agent>\& agents,}
+\DoxyCodeLine{15                           \textcolor{keywordtype}{int} agent\_index) = 0;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17   std::map<std::string, float> GetStrategy();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19   \textcolor{keywordtype}{void} SetStrategy(std::string\& n, std::map<std::string, float>\& p);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21   \mbox{\hyperlink{class_strategy}{Strategy}}();}
+\DoxyCodeLine{23   std::vector<int> \mbox{\hyperlink{class_strategy_addf3cb683d8c3b9047095f4439aeb322}{chromosome}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25  \textcolor{keyword}{private}:}
+\DoxyCodeLine{26   std::map<std::string, float> params;}
+\DoxyCodeLine{28   std::string name;}
+\DoxyCodeLine{29   }
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{class_defect_strategy}{DefectStrategy}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_strategy}{Strategy}} \{}
+\DoxyCodeLine{34  \textcolor{keyword}{public}:}
+\DoxyCodeLine{35   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_defect_strategy_a7ade74f034a031e9af23dcaeccb1f179}{MakeChoice}}(\textcolor{keyword}{const} std::vector<Agent>\& agents, \textcolor{keywordtype}{int} agent\_index);}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{class_coop_strategy}{CoopStrategy}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_strategy}{Strategy}} \{}
+\DoxyCodeLine{40  \textcolor{keyword}{public}:}
+\DoxyCodeLine{41   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_coop_strategy_ab626ce44870b0dd75b262ff5fbc687ba}{MakeChoice}}(\textcolor{keyword}{const} std::vector<Agent>\& agents, \textcolor{keywordtype}{int} agent\_index);}
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{class_tit_for_tat}{TitForTat}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_strategy}{Strategy}} \{}
+\DoxyCodeLine{46   \textcolor{keywordtype}{bool} MakeChoice(\textcolor{keyword}{const} std::vector<Agent>\& agents, \textcolor{keywordtype}{int} agent\_index);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} SetStart(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{bool} choice);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50  \textcolor{keyword}{private}:}
+\DoxyCodeLine{51   \textcolor{keywordtype}{int} start\_strategy1;}
+\DoxyCodeLine{52   \textcolor{keywordtype}{int} start\_strategy2;}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56 \textcolor{keyword}{class }\mbox{\hyperlink{class_genetic_strategy}{GeneticStrategy}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_strategy}{Strategy}} \{}
+\DoxyCodeLine{57   \textcolor{keywordtype}{bool} MakeChoice(\textcolor{keyword}{const} std::vector<Agent>\& agents, \textcolor{keywordtype}{int} agent\_index);}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61 \textcolor{keyword}{class }\mbox{\hyperlink{class_agent}{Agent}} \{}
+\DoxyCodeLine{62  \textcolor{keyword}{public}:}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} PrintStrategy();}
+\DoxyCodeLine{65   \textcolor{keywordtype}{float} \mbox{\hyperlink{class_agent_afe32983116716b986d5ba6a2ace6b099}{score}};}
+\DoxyCodeLine{67   std::vector<int> \mbox{\hyperlink{class_agent_a43b84fc6aa29d43196e0bc5b48a4240d}{history}};}
+\DoxyCodeLine{69   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_agent_a34e3a00b9c8e42c360b4f1b4ec455def}{choice}};}
+\DoxyCodeLine{70   \mbox{\hyperlink{class_agent}{Agent}}();}
+\DoxyCodeLine{72   \mbox{\hyperlink{class_strategy}{Strategy}}* \mbox{\hyperlink{class_agent_a56740e7d09d3e9f96c108696dfb500c9}{strategy}};}
+\DoxyCodeLine{73   \textcolor{keywordtype}{int} GetAgent\_ID();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75  \textcolor{keyword}{private}:}
+\DoxyCodeLine{76   \textcolor{keywordtype}{int} Agent\_ID;}
+\DoxyCodeLine{77 \};}
+
+\end{DoxyCode}

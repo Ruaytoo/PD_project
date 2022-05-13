@@ -6,8 +6,6 @@ Lines = data.readlines()
 
 N, E = map(int, Lines[0].split())
 
-print(len(Lines))
-
 y = []
 x = []
 p = 0
