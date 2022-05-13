@@ -3,6 +3,8 @@
 int main() {
   RunTest(&TestMutation, "MutationTest");
   RunTest(&TestCrossover, "CrossoverTest");
+  RunTest(&TestGeneratePopulation, "GenerationTest");
+  RunTest(&TestUpdateScore, "UpdateScoreTest");
 
   int N = 2;
   int R = 200;

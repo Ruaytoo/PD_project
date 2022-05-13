@@ -14,3 +14,7 @@ void AssertEqual (T& t, U& u, std::string hint);
 void TestMutation();
 
 void TestCrossover();
+
+void TestGeneratePopulation();
+
+void TestUpdateScore();
