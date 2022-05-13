@@ -1,8 +1,8 @@
 #number of agents
-N = 1000
+N = 2
 
 #number of training rounds
-R = 100
+R = 10
 
 #number of experiments
 E = 10
