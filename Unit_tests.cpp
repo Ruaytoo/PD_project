@@ -89,18 +89,18 @@ void TestCrossover()
 
 void TestGeneratePopulation()
 {
-    Game game(1, 1, 1, 1, 0);
-    for (int i = 0; i < 10; i++)
-    {
-        Agent agent;
-        agent.strategy = new DefectStrategy;
-        game.agents.push_back(agent);
-    }
-
     std::vector<int> sizes = {10, 50, 100};
 
     for (int i = 0; i < 3; i++)
     {
+        Game game(1, 1, 1, 1, 0);
+        for (int j = 0; i < sizes[i]; i++)
+        {
+            Agent agent;
+            agent.strategy = new DefectStrategy;
+            game.agents.push_back(agent);
+        }
+
         game.Generate_new_population();
         int size = game.agents.size();
         AssertEqual(sizes[i], size, std::to_string(i) + " test failed");
