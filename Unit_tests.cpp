@@ -1,6 +1,5 @@
 #include "Unit_tests.h"
 
-//template <class TestFunc >
 void RunTest( void (*func)() , const std::string& test_name ) {
     try {
         func ();
@@ -43,10 +42,11 @@ void TestMutation()
 
     std::vector<int> index = {0, 9, 4, 9, 3, 6, 7};
 
-    for (int i = 0; i < index.size(); i++)
+    for (unsigned long i = 0; i < index.size(); i++)
     {
 
-        std::vector<int> chromosome = Mutate(chromosomes[i], index[i]);
+        std::vector<int> chromosome = (std::vector<int>)
+                                        Mutate(chromosomes[i], (unsigned int) index[i]);
         AssertEqual(expected[i], chromosome, std::to_string(i) + " test failed");
     }
 
@@ -78,9 +78,9 @@ void TestCrossover()
             {0, 0, 1, 1, 1, 1, 1, 1, 0, 0}
     };
 
-    for (int i = 0; i < index.size(); i++)
+    for (unsigned long i = 0; i < index.size(); i++)
     {
-        std::vector<int> chromosome = Crossover(first_pair[i], second_pair[i],index[i]);
+        std::vector<int> chromosome = Crossover(first_pair[i], second_pair[i], (unsigned int) index[i]);
         AssertEqual(expected[i], chromosome, std::to_string(i) + " test failed");
     }
 
@@ -91,7 +91,7 @@ void TestGeneratePopulation()
 {
     std::vector<int> sizes = {10, 50, 100};
 
-    for (int i = 0; i < 3; i++)
+    for (unsigned long i = 0; i < 3; i++)
     {
         Game game(1, 1, 1, 1, 0);
         for (int j = 0; j < sizes[i]; j++)
@@ -102,7 +102,7 @@ void TestGeneratePopulation()
         }
 
         game.Generate_new_population();
-        int size = game.agents.size();
+        int size = (int) game.agents.size();
         AssertEqual(sizes[i], size, std::to_string(i) + " test failed");
     }
 
@@ -146,7 +146,7 @@ void TestUpdateScore()
             std::make_pair(1,1)
     };
 
-    for (int i = 0; i < scores.size(); i++)
+    for (unsigned long i = 0; i < scores.size(); i++)
     {
         agent_1.score = 0;
         agent_2.score = 0;
