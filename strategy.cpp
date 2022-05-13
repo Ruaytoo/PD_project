@@ -89,3 +89,40 @@ bool GeneticStrategy::MakeChoice(const std::vector<Agent>& agents,
   return agents.at((unsigned long)agent_index)
       .strategy->chromosome.at(asBinary);
 }
+
+bool DetectiveStrategy::MakeChoice(const std::vector<Agent> &agents, int agent_index) {
+    Agent agent = agents[agent_index];
+    if (agent.history.empty())
+    {
+        return 0;
+    }
+
+    if (agent.history[agent.history.size() - 1] == 1)
+    {
+        float new_p = p;
+        if (p < 1)
+        {
+            new_p += 0.1;
+        }
+        float random_var = float(rand()) / RAND_MAX;
+        if (random_var > p)
+        {
+            p = new_p;
+            return 0;
+        }
+        else
+        {
+            p = new_p;
+            return 1;
+        }
+    }
+
+    else
+    {
+        if (p > 0.1)
+        {
+            p -= 0.1;
+        }
+        return 0;
+    }
+}
