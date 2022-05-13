@@ -94,7 +94,7 @@ void TestGeneratePopulation()
     for (int i = 0; i < 3; i++)
     {
         Game game(1, 1, 1, 1, 0);
-        for (int j = 0; i < sizes[i]; i++)
+        for (int j = 0; j < sizes[i]; j++)
         {
             Agent agent;
             agent.strategy = new DefectStrategy;
