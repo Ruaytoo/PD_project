@@ -1,10 +1,7 @@
-#include "game.cpp"
-#include <vector>
-#include <stdexcept>
-#include <sstream>
+#include "Unit_tests.h"
 
-template <class TestFunc >
-void RunTest( TestFunc func , const std::string& test_name ) {
+//template <class TestFunc >
+void RunTest( void (*func)() , const std::string& test_name ) {
     try {
         func ();
     } catch ( std::runtime_error & e) {
@@ -52,6 +49,8 @@ void TestMutation()
         std::vector<int> chromosome = Mutate(chromosomes[i], index[i]);
         AssertEqual(expected[i], chromosome, std::to_string(i) + " test failed");
     }
+
+    std::cerr << "mutation test ok" << '\n';
 }
 
 void TestCrossover()
@@ -84,5 +83,7 @@ void TestCrossover()
         std::vector<int> chromosome = Crossover(first_pair[i], second_pair[i],index[i]);
         AssertEqual(expected[i], chromosome, std::to_string(i) + " test failed");
     }
+
+    std::cerr << "Crossover test ok" << '\n';
 }
 

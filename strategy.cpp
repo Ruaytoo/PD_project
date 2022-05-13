@@ -29,17 +29,23 @@ void Strategy::SetStrategy(std::string& n, std::map<std::string, float>& p) {
   params = p;
 };
 
-/*bool DefectStrategy::MakeChoice(const std::vector<Agent>& agents, int
+bool DefectStrategy::MakeChoice(const std::vector<Agent>& agents, int
 agent_index)
 {
+  if (agents.size() > (unsigned long) agent_index)
     return 0;
+  else
+    throw std::runtime_error("wrong agent index in DefectStrategy");
 }
 
 
 bool CoopStrategy::MakeChoice(const std::vector<Agent>& agents, int agent_index)
 {
+  if (agents.size() > (unsigned long) agent_index)
     return 1;
-}*/
+  else
+    throw std::runtime_error("wrong agent index in CoopStrategy");
+}
 
 bool TitForTat::MakeChoice(const std::vector<Agent>& agents, int agent_index) {
   if (agents[(unsigned long)agent_index].history.empty()) {

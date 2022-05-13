@@ -6,3 +6,6 @@ R = 400
 
 #number of experiments
 E = 100
+
+#name of strategy
+strategy = GeneticStrategy

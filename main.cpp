@@ -1,15 +1,15 @@
 #include "main.h"
-#include "Unit_tests.cpp"
 
 int main() {
-    RunTest(TestMutation, "MutationTest");
-    RunTest(TestCrossover, "CrossoverTest");
+  RunTest(&TestMutation, "MutationTest");
+  RunTest(&TestCrossover, "CrossoverTest");
 
-  int N = 42;
+  int N = 2;
   int R = 200;
   int E = 10;
+  std::string strategy_name = "GeneticStrategy";
 
-  parse(N, R, E);
+  parse(N, R, E, strategy_name);
 
   std::ofstream result;
   result.open("result.txt");
@@ -23,7 +23,16 @@ int main() {
 
       for (int i = 0; i < N; ++i) {
         Agent agent;
-        agent.strategy = new GeneticStrategy;
+        if (strategy_name == "GeneticStrategy")
+          agent.strategy = new GeneticStrategy;
+        else if (strategy_name == "TitForTat")
+          agent.strategy = new TitForTat;
+        else if (strategy_name == "DefectStrategy")
+          agent.strategy = new DefectStrategy;
+        else if (strategy_name == "CoopStrategy")
+          agent.strategy = new CoopStrategy;
+        else
+          throw std::runtime_error("wrong strategy_name");
         game.agents.push_back(agent);
       }
 
@@ -50,7 +59,7 @@ int main() {
   return 0;
 }
 
-void parse(int& N, int& R, int& E) {
+void parse(int& N, int& R, int& E, std::string& strategy_name) {
   std::ifstream cFile("config.txt");
 
   if (cFile.is_open()) {
@@ -67,6 +76,7 @@ void parse(int& N, int& R, int& E) {
       if (name == "N") N = std::stoi(value);
       if (name == "R") R = std::stoi(value);
       if (name == "E") E = std::stoi(value);
+      if (name == "strategy") strategy_name = value;
     }
 
   } else {
