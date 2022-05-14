@@ -17,4 +17,4 @@
 
 
 
-void parse(int& N, int& R, int& E, std::string& strategy_name, bool& train);
+void parse (int &N, int &R, int &E, std::string & strategy_name, bool &train);
