@@ -5,7 +5,7 @@ N = 2
 R = 200
 
 #number of experiments
-E = 10000
+E = 10
 
 #name of strategy
 strategy = TitForTat

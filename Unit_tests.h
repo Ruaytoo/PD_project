@@ -5,16 +5,15 @@
 #include <sstream>
 #include <string>
 
+void RunTest(void (*func)(), const std::string& test_name);
 
-void RunTest (void (*func) (), const std::string & test_name);
+template <class T, class U>
+void AssertEqual(T& t, U& u, std::string hint);
 
-template < class T, class U >
-  void AssertEqual (T & t, U & u, std::string hint);
+void TestMutation();
 
-void TestMutation ();
+void TestCrossover();
 
-void TestCrossover ();
+void TestGeneratePopulation();
 
-void TestGeneratePopulation ();
-
-void TestUpdateScore ();
+void TestUpdateScore();

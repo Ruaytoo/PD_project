@@ -7,7 +7,7 @@ main.o: main.cpp
 	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 main.cpp -c
 
 game.o: game.cpp
-	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic  -fsanitize=address-std=c++11 game.cpp -c
+	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic  -fsanitize=address -std=c++11 game.cpp -c
 
 payoff.o: payoff.cpp
 	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 payoff.cpp -c
