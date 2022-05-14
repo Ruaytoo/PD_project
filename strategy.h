@@ -60,7 +60,7 @@ class GeneticStrategy : public Strategy {
 class DetectiveStrategy : public Strategy {
     bool MakeChoice(const std::vector<Agent>& agents, int agent_index);
 
-    float p = 0.1;
+    double p = 0.1;
 };
 
 ///агент, для которого хранится история и стратегия

@@ -2,13 +2,13 @@
 N = 2
 
 #number of training rounds
-R = 10
+R = 200
 
 #number of experiments
-E = 10
+E = 10000
 
 #name of strategy
-strategy = GeneticStrategy
+strategy = TitForTat
 
 #evolute chromosome
-train = 1
+train = 0

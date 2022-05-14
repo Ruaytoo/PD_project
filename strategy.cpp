@@ -91,7 +91,7 @@ bool GeneticStrategy::MakeChoice(const std::vector<Agent>& agents,
 }
 
 bool DetectiveStrategy::MakeChoice(const std::vector<Agent> &agents, int agent_index) {
-    Agent agent = agents[agent_index];
+    Agent agent = agents[(unsigned long) agent_index];
     if (agent.history.empty())
     {
         return 0;
@@ -99,7 +99,7 @@ bool DetectiveStrategy::MakeChoice(const std::vector<Agent> &agents, int agent_i
 
     if (agent.history[agent.history.size() - 1] == 1)
     {
-        float new_p = p;
+        double new_p = p;
         if (p < 1)
         {
             new_p += 0.1;

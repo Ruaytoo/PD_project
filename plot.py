@@ -1,4 +1,7 @@
 import matplotlib.pyplot as plt
+import subprocess
+
+subprocess.call('./run')
 
 data = open('result.txt', 'r')
 

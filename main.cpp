@@ -34,6 +34,8 @@ int main() {
           agent.strategy = new DefectStrategy;
         else if (strategy_name == "CoopStrategy")
           agent.strategy = new CoopStrategy;
+      	else if (strategy_name == "DetectiveStrategy")
+          agent.strategy = new DetectiveStrategy;
         else
           throw std::runtime_error("wrong strategy_name");
         game.agents.push_back(agent);
