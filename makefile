@@ -1,25 +1,31 @@
-all: run
+all: ./objects/run
 
-run: main.o game.o payoff.o agent.o strategy.o Unit_tests.o
-	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address main.o game.o payoff.o agent.o strategy.o Unit_tests.o -o run
+./objects/run: ./objects/main.o ./objects/game.o ./objects/payoff.o \
+			./objects/agent.o ./objects/strategy.o ./objects/Unit_tests.o
 
-main.o: main.cpp
-	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 main.cpp -c
+			c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address\
+			 ./objects/main.o ./objects/game.o ./objects/payoff.o ./objects/agent.o\
+			  ./objects/strategy.o ./objects/Unit_tests.o -o ./objects/run
 
-game.o: game.cpp
-	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic  -fsanitize=address -std=c++11 game.cpp -c
+./objects/main.o -o: ./src/main.cpp
+	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 -c ./src/main.cpp -o ./objects/main.o
 
-payoff.o: payoff.cpp
-	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 payoff.cpp -c
+./objects/game.o: ./src/game.cpp
+	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 -c ./src/game.cpp -o ./objects/game.o
 
-agent.o: agent.cpp
-	c++ -ggdb3 -Wall -Wextra -Wconversion  -pedantic -fsanitize=address -std=c++11 agent.cpp -c
+./objects/payoff.o: ./src/payoff.cpp
+	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 -c ./src/payoff.cpp -o ./objects/payoff.o
 
-strategy.o: strategy.cpp
-	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 strategy.cpp -c
+./objects/agent.o: ./src/agent.cpp
+	c++ -ggdb3 -Wall -Wextra -Wconversion  -pedantic -fsanitize=address -std=c++11 -c ./src/agent.cpp -o ./objects/agent.o
 
-Unit_tests.o: Unit_tests.cpp
-	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 Unit_tests.cpp -c
+./objects/strategy.o: ./src/strategy.cpp
+	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 -c ./src/strategy.cpp -o\
+	 ./objects/strategy.o
+
+./objects/Unit_tests.o: ./src/Unit_tests.cpp
+	c++ -ggdb3 -Wall -Wextra -Wconversion -pedantic -fsanitize=address -std=c++11 -c ./src/Unit_tests.cpp -o\
+	./objects/Unit_tests.o
 
 clean:
-	rm -rf run *.o run
+	rm -rf ./objects/run ./objects/*.o ./objects/run

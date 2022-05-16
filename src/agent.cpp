@@ -1,4 +1,4 @@
-#include "strategy.h"
+#include "../headers/strategy.h"
 
 Agent::Agent() { score = 0; }
 

@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import subprocess
 
-subprocess.call('./run')
+subprocess.call('./objects/run')
 
-data = open('result.txt', 'r')
+data = open('./output/result.txt', 'r')
 
 Lines = data.readlines()
 

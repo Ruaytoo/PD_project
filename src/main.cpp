@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../headers/main.h"
 
 int main() {
   RunTest(&TestMutation, "MutationTest");
@@ -15,7 +15,7 @@ int main() {
   parse(N, R, E, strategy_name, train);
 
   std::ofstream result;
-  result.open("result.txt");
+  result.open("./output/result.txt");
   result << N << ' ' << E << '\n';
 
   for (double p = 0; p <= 1; p += 0.01) {

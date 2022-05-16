@@ -1,4 +1,4 @@
-#include "payoff.h"
+#include "../headers/payoff.h"
 #include <iostream>
 
 Payoff::Payoff(float dd, float dc, float cd, float cc, float p) : distr(0, C) {
