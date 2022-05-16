@@ -31,5 +31,7 @@
 *.out
 *.app
 
-# ignore the file literally named DS_Store
-.DS_Store
+# ignore the files literally named
+*.DS_Store
+*run
+objects/
